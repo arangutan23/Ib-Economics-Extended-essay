@@ -1,0 +1,13 @@
+
+datos$Matriculas <- as.numeric(gsub(",", "", datos$Matriculas))
+
+s
+datos$log_Matriculas <- log(datos$Matriculas)
+datos$log_PrecioGasolina <- log(datos$PrecioGasolina)
+datos$log_PuntosCarga <- log(datos$PuntosCarga)
+
+
+modelo <- lm(log_Matriculas ~ log_PuntosCarga + log_PrecioGasolina, data = datos)
+
+
+summary(modelo)
